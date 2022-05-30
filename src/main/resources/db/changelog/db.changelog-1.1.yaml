@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: loadData-customer
+      author: fquinteros31@gmail.com
+      changes:
+        - tagDatabase:
+            tag: v1.0
+        - loadData:
+            encoding: UTF-8
+            file: db/data/Customer.csv
+            quotchar: "'"
+            separator: ";"
+            tableName: CUSTOMER

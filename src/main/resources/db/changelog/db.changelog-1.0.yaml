@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-customer
+      author: fquinteros31@gmail.com
+      labels: labelOne
+      changes:
+        - tagDatabase:
+            tag: v1.0
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: customer_pkey
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+              - column:
+                  name: FIRST_NAME
+                  type: varchar(255)
+              - column:
+                  name: LAST_NAME
+                  type: varchar(255)
+              - column:
+                  name: BIRTHDAY
+                  type: date
+              - column:
+                  name: GENDER
+                  type: varchar(255)
+              - column:
+                  name: CELL_PHONE
+                  type: varchar(255)
+              - column:
+                  name: HOME_PHONE
+                  type: varchar(255)
+              - column:
+                  name: ADDRESS_HOME
+                  type: varchar(255)
+              - column:
+                  name: PROFESSION
+                  type: varchar(255)
+              - column:
+                  name: INCOMES
+                  type: DOUBLE                  
+            tableName: CUSTOMER
+        - rollback:
+            - dropTable:
+                tableName: CUSTOMER
